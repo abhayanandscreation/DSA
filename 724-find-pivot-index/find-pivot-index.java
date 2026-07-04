@@ -3,11 +3,11 @@ class Solution {
         int total= 0;
         for (int num : nums)
             total += num;
-        int leftSum= 0;
+        int leftsum= 0;
         for (int i=0; i<nums.length; i++){
-            if (leftSum == total - leftSum - nums[i])
+            if (leftsum == total - leftsum - nums[i])
                 return i;
-            leftSum+= nums[i];
+            leftsum+= nums[i];
         }
         return -1;
     }
