@@ -10,13 +10,13 @@
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-        if(head == null || head.next== null) return head;
+       /* if(head == null || head.next== null) return head;
         ListNode a = head.next;
         head.next = null;
         ListNode b = reverseList(a);
         a.next = head;
-        return b;
-       /* ArrayList<ListNode> arr = new ArrayList<>();
+        return b; */
+        ArrayList<ListNode> arr = new ArrayList<>();
         if(head==null || head.next==null) return head;
         ListNode temp = head;
         while(temp!= null){
@@ -28,7 +28,7 @@ class Solution {
             arr.get(i).next = arr.get(i-1);
         }
         arr.get(0).next = null;
-        return arr.get(n); */
+        return arr.get(n); 
 
     }
 }
