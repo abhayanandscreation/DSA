@@ -1,28 +1,23 @@
 class Solution {
-
     public List<String> binaryTreePaths(TreeNode root) {
-
         List<String> ans = new ArrayList<>();
-
-        dfs(root, "", ans);
-
+        StringBuilder path = new StringBuilder();
+        dfs(root, path, ans);
         return ans;
     }
 
-    void dfs(TreeNode root, String path, List<String> ans) {
-
+    void dfs(TreeNode root, StringBuilder path, List<String> ans) {
         if (root == null) return;
-
-        path += root.val;
-
-        if (root.left == null && root.right == null) {
-            ans.add(path);
-            return;
+        int len = path.length();
+        if (path.length() > 0) {
+            path.append("->");
         }
-
-        path += "->";
-
+        path.append(root.val);
+        if (root.left == null && root.right == null) {
+            ans.add(path.toString());
+        }
         dfs(root.left, path, ans);
         dfs(root.right, path, ans);
+        path.setLength(len);
     }
 }
